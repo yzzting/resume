@@ -23,6 +23,7 @@ gulp.task('less', function() {
 
 gulp.task('watch', function() {
     gulp.watch('./templates/src/index.less',['less'])
+    gulp.watch('./templates/src/style/*/*.less',['less'])
     gulp.watch('./templates/index.jade',['jade'])
     gulp.watch('./templates/resumeEN.jade',['jade'])
 })
@@ -33,6 +34,11 @@ gulp.task('server',function(){
     root:'./dist',
     livereload:'8080'
   })
+})
+
+gulp.task('deploy', ['build'], function() {
+    return gulp.src('./dist/**/*')
+        .pipe(ghPages());
 })
 
 gulp.task('build', ['less', 'jade']);

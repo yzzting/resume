@@ -1,0 +1,25 @@
+@header-backgroundColor: #2D4059;
+@header-logoColor: #EA5455;
+.header-style {
+    width: 960px;
+    padding: 10% 0;
+    background-color: @header-backgroundColor;
+}
+
+.header-infoStyle {
+    color: @header-logoColor;
+    height: inherit;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bolder;
+    .job-name {
+        font-size: 22px;
+    }
+}
+
+.header-main {
+    .header-style;
+    .header-info {
+        .header-infoStyle;
+    }
+}
